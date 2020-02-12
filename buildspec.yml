@@ -14,3 +14,4 @@ phases:
   post_build:
     commands:
       - aws s3 sync ./build s3://yjhoon9-example # 빌드 후 결과물을 버킷으로 업로드
+      - aws cloudfront create-invalidation --distribution-id E2D3465AZI215A --paths / /index.html /error.html /service-worker.js /manifest.json /favicon.ico
